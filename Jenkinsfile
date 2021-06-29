@@ -27,23 +27,26 @@ pipeline {
             agent {
                 docker { image 'node:14-alpine' }
             }         
-            stages { 
-                dir('DotnetTemplate.Web'){
-                    stage('Build the TypeScript Code') { 
+            stages {                 
+                    stage('Build/Lint/Test the TypeScript Code') { 
                         steps {
-                            sh "npm install && npm run build"
+                            dir('DotnetTemplate.Web'){
+                                sh "npm install && npm run build"
+                                sh "npm run lint"
+                                sh "npm t"
+                            }
                         }
                     }
-                    stage('Run the linter on the TypeScript code') {
+                    /*stage('Run the linter on the TypeScript code') {
                         steps {
-                            sh "npm run lint"
+                            
                         }
                     }
                     stage('Run the TypeScript tests') {
                         steps {
-                            sh "npm t"
+                            
                         }
-                    }
+                    }*/
                 }
             }
         }
