@@ -6,15 +6,15 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh echo 'Building..'
-                sh dotnet build
+                sh "echo 'Building..'"
+                sh 'dotnet build'
             }
         }
-        stage('Test') {
+        /*stage('Test') {
             steps {
                 sh echo 'Testing..'
                 sh dotnet test
             }
-        }        
+        } */       
     }
 }
