@@ -3,16 +3,12 @@ pipeline {
         docker { image 'mcr.microsoft.com/dotnet/sdk:5.0' }
     }
 
-    stages {
-        stage('Checkout'){
-            steps {
-                checkout scm
-            }
-        }
+    stages {        
         stage('Build') {
             steps {
+                checkout scm
                 sh "echo 'Building..'"
-                sh 'dotnet build'
+                sh 'dotnet build DotnetTemplate.sln'
             }
         }
         /*stage('Test') {
