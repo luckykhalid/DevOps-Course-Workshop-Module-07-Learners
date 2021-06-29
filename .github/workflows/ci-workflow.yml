@@ -8,9 +8,20 @@ jobs:
     steps:
     - uses: actions/checkout@v2 # Adds a step to checkout the repository code
     
-    - name: Build
-      run: dotnet build      
+    - name: Build the C# code
+      run: dotnet build  
+
+    - name: Run the C# tests
+      run: dotnet test      
     
-    - name: npm install & build
+    - name: Build the TypeScript code
+      run: npm install && npm run build
+      working-directory: ./DotnetTemplate.Web
+
+    - name: Run the linter on the TypeScript code
+      run: npm t
+      working-directory: ./DotnetTemplate.Web
+
+    - name: Run the TypeScript tests
       run: npm install && npm run build
       working-directory: ./DotnetTemplate.Web
