@@ -39,12 +39,16 @@ pipeline {
                 }
                 stage('Run the linter on the TypeScript code') {
                     steps {
-                        sh "npm run lint"
+                        dir('DotnetTemplate.Web') {
+                            sh "npm run lint"
+                        }
                     }
                 }
                 stage('Run the TypeScript tests') {
                     steps {
-                        sh "npm run test-with-coverage"
+                        dir('DotnetTemplate.Web') {
+                            sh "npm run test-with-coverage"
+                        }
                     }
                 }
             }
