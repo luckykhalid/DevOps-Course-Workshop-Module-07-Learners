@@ -27,11 +27,11 @@ jobs:
       working-directory: ./DotnetTemplate.Web
 
     - name: Run the linter on the TypeScript code
-      run: npm t
+      run: npm run lint
       working-directory: ./DotnetTemplate.Web
 
     - name: Run the TypeScript tests
-      run: npm install && npm run build
+      run: npm t
       working-directory: ./DotnetTemplate.Web
 
     - name: Slack Notification
