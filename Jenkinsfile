@@ -1,15 +1,16 @@
 pipeline {
 
-    agent {
-        docker { image 'mcr.microsoft.com/dotnet/sdk:5.0' }
-    }    
+    agent none
 
     environment {        
         DOTNET_CLI_HOME = "/tmp/DOTNET_CLI_HOME"
     }
 
-    stages {        
+    stages {               
         stage('C# Stages') {
+            agent {
+                docker { image 'mcr.microsoft.com/dotnet/sdk:5.0' }
+            }    
             stages { 
                 stage('Build the C# Code') { 
                     steps {
