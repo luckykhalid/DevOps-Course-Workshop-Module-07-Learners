@@ -6,14 +6,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
-                dotnet build
+                sh echo 'Building..'
+                sh dotnet build
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
-                dotnet test
+                sh echo 'Testing..'
+                sh dotnet test
             }
         }        
     }
