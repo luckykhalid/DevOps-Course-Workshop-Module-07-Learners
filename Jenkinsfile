@@ -12,7 +12,7 @@ pipeline {
             steps {
                 checkout scm
                 sh "echo 'Building..'"
-                sh 'dotnet build DotnetTemplate.sln'
+                sh 'dotnet build'
             }
         }
         /*stage('Test') {
