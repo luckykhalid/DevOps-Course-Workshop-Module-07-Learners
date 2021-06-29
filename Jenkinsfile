@@ -34,8 +34,8 @@ pipeline {
                     steps {
                         dir('DotnetTemplate.Web') {
                             sh "npm install && npm run build"
-                            //sh "npm run lint"
-                            //sh "npm t"
+                            sh "npm run lint"
+                            sh "npm t"
                         }
                     }
                 }
