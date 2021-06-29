@@ -8,18 +8,18 @@ pipeline {
     }
 
     stages {        
-        stage('Build') {
+        stage('Build the C# code') {
             steps {
                 checkout scm
                 sh "echo 'Building..'"
                 sh 'dotnet build'
             }
         }
-        /*stage('Test') {
+        stage('Run the C# tests') {
             steps {
                 sh echo 'Testing..'
                 sh dotnet test
             }
-        } */       
+        }
     }
 }
