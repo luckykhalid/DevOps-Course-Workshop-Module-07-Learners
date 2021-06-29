@@ -12,13 +12,13 @@ pipeline {
             steps {
                 checkout scm
                 sh "echo 'Building..'"
-                sh 'dotnet build'
+                sh "dotnet build"
             }
         }
         stage('Run the C# tests') {
             steps {
-                sh echo 'Testing..'
-                sh dotnet test
+                sh "echo 'Testing..'"
+                sh "dotnet test"
             }
         }
     }
