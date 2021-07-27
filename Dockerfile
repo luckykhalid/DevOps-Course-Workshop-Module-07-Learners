@@ -5,5 +5,5 @@ RUN apt-get update && apt-get install -y && curl -fsSL https://deb.nodesource.co
 WORKDIR /app
 COPY . .
 WORKDIR /app/DotnetTemplate.Web
-RUN dotnet build
+RUN npm install && npm run build && dotnet build
 ENTRYPOINT ["dotnet", "run"]
