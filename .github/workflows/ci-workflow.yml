@@ -48,7 +48,7 @@ jobs:
         username: ${{secrets.DOCKER_USER}}
         # Password or personal access token used to log against the Docker registry
         password: ${{secrets.DOCKER_PASSWORD}}
-      run: |
-          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+      #run: |
+      #    docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
   
       
