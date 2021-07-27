@@ -57,7 +57,9 @@ jobs:
         # Push is a shorthand for --output=type=registry
         push: true
         # List of tags
-        tags: khalidashraf/dotnettemplate:${{github.sha}}
+        tags: |
+          khalidashraf/dotnettemplate:latest
+          khalidashraf/dotnettemplate:${{github.sha}}
         
         
   
